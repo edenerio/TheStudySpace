@@ -45,7 +45,7 @@
 <div id="canv" @onmousemove="MoveMouse" @onmousedown="DownMouse" @onmouseup="UpMouse"
      @ontouchmove="MoveTouch" @ontouchstart="DownTouch" @ontouchend="UpTouch"
      style="border:2px solid black;display:inline-block;max-height:80vh;max-width:100vw;overflow:hidden;">
-    <svg style="width:800px; height:800px;">
+    <svg style="width:1600px; height:800px;">
         @foreach (var line in Lines)
         {
             <LineComponent X1=@line.prevX Y1=@line.prevY X2=@line.currX Y2=@line.currY Stroke=@line.color StrokeWidth=@line.lineWidth />
