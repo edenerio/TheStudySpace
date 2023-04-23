@@ -1,0 +1,6 @@
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.csproj.AssemblyReference.cache
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.AssemblyInfoInputs.cache
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.AssemblyInfo.cs
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.csproj.CoreCompileInputs.cache
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.MvcApplicationPartsAssemblyInfo.cache

@@ -1,0 +1,59 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = TheStudySpace
+build_property.RootNamespace = TheStudySpace
+build_property.ProjectDir = C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/Pages/Calendar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FsZW5kYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/Pages/DrawingBoard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRHJhd2luZ0JvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/Pages/Notes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/Pages/Today.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9kYXkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-02o4axatf6
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-q8dcog7m4a
+
+[C:/Users/ediso/OneDrive/Desktop/Classhit/TheStudySpace/TheStudySpace/TheStudySpace/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-vebmmr1uig

@@ -1,0 +1,40 @@
+﻿@page "/drawingboard"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager NavigationManager
+
+<canvas @ref="_canvas" @onmousemove="CanvasMouseMove"></canvas>
+
+@code {
+    private ElementReference _canvas;
+    private HubConnection _hubConnection;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/drawingBoardHub"))
+            .Build();
+
+        _hubConnection.On<int, int>("ReceiveDraw", (x, y) => Draw(x, y));
+
+        await _hubConnection.StartAsync();
+    }
+
+    private async Task CanvasMouseMove(MouseEventArgs e)
+    {
+        await Draw((int)e.ClientX, (int)e.ClientY);
+        await _hubConnection.SendAsync("Draw", (int)e.ClientX, (int)e.ClientY);
+    }
+
+    private async Task Draw(int x, int y)
+    {
+        await JS.InvokeVoidAsync("window.draw", _canvas, x, y);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_hubConnection != null)
+        {
+            await _hubConnection.DisposeAsync();
+        }
+    }
+}

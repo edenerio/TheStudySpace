@@ -1,0 +1,251 @@
+/* /Pages/Today.razor.rz.scp.css */
+.navbar-toggler[b-02o4axatf6] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-02o4axatf6] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-02o4axatf6] {
+    font-size: 1.1rem;
+}
+
+.oi[b-02o4axatf6] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-02o4axatf6] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-02o4axatf6] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-02o4axatf6] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-02o4axatf6]  a {
+        color: black;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+        .nav-item[b-02o4axatf6]  a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: black;
+        }
+
+        .nav-item[b-02o4axatf6]  a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: black;
+        }
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-02o4axatf6] {
+        display: none;
+    }
+
+    .collapse[b-02o4axatf6] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible[b-02o4axatf6] {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active[b-02o4axatf6], .collapsible:hover[b-02o4axatf6] {
+        background-color: #ccc;
+    }
+
+/* Style the collapsible content. Note: hidden by default */
+.content[b-02o4axatf6] {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.collapsible[b-02o4axatf6]:after {
+    content: '\25BC';
+    font-size: 13px;
+    color: black;
+    float: left;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.active[b-02o4axatf6]:after {
+    content: "\25B2";
+}
+
+.subNav[b-02o4axatf6] {
+    width: 200px;
+}
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-q8dcog7m4a] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-q8dcog7m4a] {
+    flex: 1;
+}
+
+.sidebar[b-q8dcog7m4a] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-q8dcog7m4a] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-q8dcog7m4a]  a, .top-row[b-q8dcog7m4a]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-q8dcog7m4a]  a:hover, .top-row[b-q8dcog7m4a]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-q8dcog7m4a]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-q8dcog7m4a] {
+        display: none;
+    }
+
+    .top-row.auth[b-q8dcog7m4a] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-q8dcog7m4a]  a, .top-row[b-q8dcog7m4a]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-q8dcog7m4a] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-q8dcog7m4a] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-q8dcog7m4a] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-q8dcog7m4a]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-q8dcog7m4a], article[b-q8dcog7m4a] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* /Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-vebmmr1uig] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-vebmmr1uig] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-vebmmr1uig] {
+    font-size: 1.1rem;
+}
+
+.oi[b-vebmmr1uig] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-vebmmr1uig] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-vebmmr1uig] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-vebmmr1uig] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-vebmmr1uig]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-vebmmr1uig]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-vebmmr1uig]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-vebmmr1uig] {
+        display: none;
+    }
+
+    .collapse[b-vebmmr1uig] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
