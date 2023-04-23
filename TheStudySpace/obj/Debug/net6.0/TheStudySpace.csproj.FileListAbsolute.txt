@@ -4,3 +4,6 @@ C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpa
 C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.AssemblyInfo.cs
 C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.csproj.CoreCompileInputs.cache
 C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.dll
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\refint\TheStudySpace.dll
+C:\Users\ediso\OneDrive\Desktop\Classhit\TheStudySpace\TheStudySpace\TheStudySpace\obj\Debug\net6.0\TheStudySpace.pdb
