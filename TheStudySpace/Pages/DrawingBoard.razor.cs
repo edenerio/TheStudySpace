@@ -1,0 +1,189 @@
+﻿using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.SignalR.Client;
+
+namespace TheStudySpace.Pages
+{
+    public partial class DrawingBoard
+    {
+        protected List<Line> Lines = new List<Line>();
+
+        protected List<string> Users = new List<string>();
+
+        protected bool flag = false;
+
+        protected bool colorPickerOpened = false;
+
+        protected double prevX = 0;
+        protected double currX = 0;
+        protected double prevY = 0;
+        protected double currY = 0;
+
+        protected int count = 0;
+
+        protected int status = 0;
+
+        protected string color = "#000000";
+        protected float lineWidth = 2;
+
+        private async Task MoveMouse(MouseEventArgs e)
+        {
+            await Move(e.ClientX, e.ClientY);
+        }
+        private async Task MoveTouch(TouchEventArgs e)
+        {
+            await Move(e.Touches[0].ClientX, e.Touches[0].ClientY);
+        }
+        private async Task Move(double clientX, double clientY)
+        {
+            if (flag)
+            {
+                prevX = currX;
+                prevY = currY;
+                currX = clientX;
+                currY = clientY;
+
+                var addedLine = new Line(prevX, prevY, currX, currY, color, lineWidth);
+                Lines.Add(addedLine);
+
+                await hubConnection.SendAsync("Draw", prevX, prevY, currX, currY, color, lineWidth);
+
+                status++;
+                count++;
+                this.StateHasChanged();
+            }
+        }
+
+        private async Task DownMouse(MouseEventArgs e)
+        {
+            await Down(e.ClientX, e.ClientY);
+        }
+        private async Task DownTouch(TouchEventArgs e)
+        {
+            await Down(e.Touches[0].ClientX, e.Touches[0].ClientY);
+        }
+        private async Task Down(double clientX, double clientY)
+        {
+            prevX = currX;
+            prevY = currY;
+            currX = clientX;
+            currY = clientY;
+
+            flag = true;
+        }
+
+        private void UpMouse(MouseEventArgs e)
+        {
+            flag = false;
+        }
+        private void UpTouch(TouchEventArgs e)
+        {
+            flag = false;
+        }
+
+        void OpenColorModal()
+        {
+            colorPickerOpened = true;
+        }
+
+        private void UseColor(string value)
+        {
+            if (value == "#FFFFFF")
+            {
+                color = "white";
+                lineWidth = 10;
+            }
+            else
+            {
+                color = value;
+                lineWidth = 2;
+            }
+            colorPickerOpened = false;
+        }
+
+        private HubConnection hubConnection;
+        private List<string> messages = new List<string>();
+        private string userInput;
+        private string messageInput;
+
+        protected override async Task OnInitializedAsync()
+        {
+            hubConnection = new HubConnectionBuilder()
+                .WithUrl("https://kristoffer-strube.dk/API/drawHub")
+                .WithAutomaticReconnect()
+                .Build();
+
+            hubConnection.Closed += async (err) => Console.WriteLine(err);
+
+            hubConnection.On<double, double, double, double, string, float>("ReceiveDraw", async (SprevX, SprevY, ScurrX, ScurrY, Scolor, SlineWidth) =>
+            {
+                var addedLine = new Line(SprevX, SprevY, ScurrX, ScurrY, Scolor, SlineWidth);
+                Lines.Add(addedLine);
+
+                status++;
+                count++;
+                this.StateHasChanged();
+            });
+
+            hubConnection.On("ReceiveClear", async () =>
+            {
+                Lines.Clear();
+                count = 0;
+                status = 0;
+                StateHasChanged();
+            });
+
+            hubConnection.On<List<string>>("ReceiveUsers", async (users) =>
+            {
+                Users = users;
+                StateHasChanged();
+            });
+
+            await hubConnection.StartAsync();
+
+            count = await hubConnection.InvokeAsync<int>("CountLines");
+
+            Users = await hubConnection.InvokeAsync<List<string>>("StartUsers", Guid.NewGuid().ToString().Substring(0, 4));
+            StateHasChanged();
+
+            var cancellationTokenSource = new CancellationTokenSource();
+            var stream = hubConnection.StreamAsync<Line>(
+                "StartLines", cancellationTokenSource.Token);
+
+            await foreach (Line line in stream)
+            {
+                Lines.Add(line);
+                status++;
+                await Task.Yield();
+            }
+            StateHasChanged();
+        }
+
+        protected async Task Clear()
+        {
+            await hubConnection.SendAsync("Clear");
+        }
+
+        public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+        public class Line
+        {
+            public Line() { }
+            public Line(double prevX, double prevY, double currX, double currY, string color, float lineWidth)
+            {
+                this.prevX = prevX;
+                this.prevY = prevY;
+                this.currX = currX;
+                this.currY = currY;
+                this.color = color;
+                this.lineWidth = lineWidth;
+            }
+            public double prevX { get; set; }
+            public double currX { get; set; }
+            public double prevY { get; set; }
+            public double currY { get; set; }
+            public string color { get; set; }
+            public float lineWidth { get; set; }
+        }
+    }
+}

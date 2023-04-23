@@ -1,6 +1,6 @@
 ﻿@page "/drawingboard"
-@using Microsoft.AspNetCore.SignalR.Client
-@inject NavigationManager NavigationManager
+@*@using Microsoft.AspNetCore.SignalR.Client*@
+@*@inject NavigationManager NavigationManager
 
 <canvas @ref="_canvas" @onmousemove="CanvasMouseMove"></canvas>
 
@@ -27,7 +27,7 @@
 
     private async Task Draw(int x, int y)
     {
-        //await JS.InvokeVoidAsync("window.draw", _canvas, x, y);
+        await JS.InvokeVoidAsync("window.draw", _canvas, x, y);
     }
 
     public async ValueTask DisposeAsync()
@@ -37,4 +37,30 @@
             await _hubConnection.DisposeAsync();
         }
     }
-}
+}*@
+
+@using System.Threading;
+@*@using BlazorColorPicker*@
+
+<div id="canv" @onmousemove="MoveMouse" @onmousedown="DownMouse" @onmouseup="UpMouse"
+     @ontouchmove="MoveTouch" @ontouchstart="DownTouch" @ontouchend="UpTouch"
+     style="border:2px solid black;display:inline-block;max-height:80vh;max-width:100vw;overflow:hidden;">
+    <svg style="width:800px; height:800px;">
+        @foreach (var line in Lines)
+        {
+            <LineComponent X1=@line.prevX Y1=@line.prevY X2=@line.currX Y2=@line.currY Stroke=@line.color StrokeWidth=@line.lineWidth />
+        }
+    </svg>
+</div>
+<div>
+    <span>@status/@count lines</span>
+    <button class="btn btn-primary" @onclick="OpenColorModal">
+        <div style="background-color:@color" class="buttonColor"></div> Select a Color
+    </button>
+    <ColorPicker IsOpened="colorPickerOpened" Closed="UseColor" MyColor="@color"></ColorPicker>
+    <button class="btn btn-danger" @onclick="Clear">Clear Image</button>
+    @foreach (string user in Users)
+    {
+        <span class="badge badge-secondary" style="margin-left:4px;">@user</span>
+    }
+</div>

@@ -224,13 +224,13 @@
       "mscorlib.dll": "sha256-wmk56X5dbt29rrFZKEFpOFjotkZA+JSxA4fqkgmBsOU=",
       "netstandard.dll": "sha256-CvlfDmNgFRYT7l\/xZKu91FlbTFyLG\/5cH7YX63k9ghE=",
       "System.Private.CoreLib.dll": "sha256-aF4imeOpA59D6F5qCLabzkeY7MvRZzNYzavhB\/bdxvM=",
-      "TheStudySpace.dll": "sha256-eQ5ivQ8L\/YFoCqNqN3tVuiXCTUzN5CIbYD+GbwcbTdo="
+      "TheStudySpace.dll": "sha256-p2QFARJnbf8wMbsOD19rFB0eXFdP\/xSSZFRv4dFHPNo="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "TheStudySpace.pdb": "sha256-SRXGfR+HKM2wOI7dXqv6SCZpNX+XRMzLbyzVfqw9dHA="
+      "TheStudySpace.pdb": "sha256-cixfk2M9JJqXnI+ZFHcmEvL6eUxxELGlRwEjhBFl9oQ="
     },
     "runtime": {
       "dotnet.6.0.7.dei9kv1i84.js": "sha256-pvJcJ6jtDSfxgXm03QYRTm4aAi9PSzMSJODReHtvASY=",
